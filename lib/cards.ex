@@ -5,10 +5,6 @@ defmodule Cards do
 
   @doc """
   Returns a list of string representing play cards.
-  ## Examples
-
-      iex> Cards.create_deck
-      ["Ace","Two","Three"]
 
   """
   def create_deck do
@@ -22,10 +18,12 @@ defmodule Cards do
 @doc """
 Divides the deck of cards in to a hand and reminder of the deck.
 The `hand_size` argument indicates how many cards should be in the hand.
+
 ## Examples
 
-    iex> {hand, deck} = Cards.create_deck|>Cards.deal(1)
-    iex> hand
+      iex> {hand, deck} = Cards.create_deck|>Cards.deal(1)
+      iex> hand
+      ["Ace of Spades"]
 """
   def deal(deck, hand_size) do
     Enum.split(deck, hand_size)
@@ -35,8 +33,6 @@ The `hand_size` argument indicates how many cards should be in the hand.
 Shuffles the deck of cards in a random order.
 The `deck` argument is the original deck of card created by [`Cards.create_deck`](#create_deck/0)
 
-##Examples
-      iex> shuffled = Cards.create_deck|>Cards.shuffle
 """
   def shuffle(deck) do
     Enum.shuffle(deck)
@@ -47,9 +43,12 @@ The `deck` argument is the original deck of card created by [`Cards.create_deck`
   The `card` argument compared against the `deck` argument.
 
   Returns `true` or `false`
-  ##Examples
+
+  ## Examples
+
+
         iex>Cards.create_deck|>Cards.contains?("Ace of Spades")
-        iex>true
+        true
   """
   def contains?(deck, card) do
     Enum.member?(deck, card)
@@ -82,9 +81,6 @@ The `deck` argument is the original deck of card created by [`Cards.create_deck`
 @doc """
 Creats a hand based on a hand size from a deck which is shuffled.
 
-##Examples
-
-      iex>Cards.create_hand|>Cards.shuffle\>Cards.deal(1)
 """
   def create_hand(hand_size) do
     Cards.create_deck
