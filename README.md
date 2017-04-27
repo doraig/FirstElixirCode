@@ -1,6 +1,7 @@
 # Cards
 
-**TODO: Add description**
+*The base functionality of this project is the understand the basic fucntional programing paradigm using Elixir which is
+based on Erlang. The implementation is a simple card functionality which provides dealing, shuffling and creating a random hand *
 
 ## Installation
 
